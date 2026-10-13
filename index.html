@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#14352B" />
+  <title>The Wedding of Ghofinda &amp; Fida</title>
+  <meta name="description" content="Undangan pernikahan Muhammad Ghofinda Prasetia &amp; Mufidah Rizqiyah — Jum'at, 23 Oktober 2026." />
+
+  <!-- Open Graph (pratinjau saat link dibagikan di WhatsApp/Instagram).
+       Untuk gambar pratinjau, ganti dengan URL absolut setelah website di-hosting,
+       contoh: https://domainanda.com/images/prewed1.jpg -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="The Wedding of Ghofinda &amp; Fida" />
+  <meta property="og:description" content="Jum'at, 23 Oktober 2026 — Anda diundang untuk berbagi kebahagiaan bersama kami." />
+  <meta property="og:image" content="images/prewed1.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body class="locked">
+
+  <!-- ===== Ilustrasi botanical (eucalyptus) & daun — dipakai ulang lewat <use> ===== -->
+  <svg width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="eucalyptus" viewBox="0 0 120 240">
+        <path d="M60 238 C52 182 72 124 58 8" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"/>
+        <g fill="currentColor">
+          <ellipse cx="42" cy="206" rx="17" ry="10" transform="rotate(-32 42 206)" fill-opacity=".9"/>
+          <ellipse cx="78" cy="190" rx="17" ry="10" transform="rotate(30 78 190)"  fill-opacity=".75"/>
+          <ellipse cx="46" cy="160" rx="16" ry="10" transform="rotate(-22 46 160)" fill-opacity=".8"/>
+          <ellipse cx="86" cy="141" rx="16" ry="10" transform="rotate(26 86 141)"  fill-opacity=".9"/>
+          <ellipse cx="50" cy="118" rx="15" ry="9"  transform="rotate(-30 50 118)" fill-opacity=".7"/>
+          <ellipse cx="82" cy="98"  rx="15" ry="9"  transform="rotate(30 82 98)"   fill-opacity=".85"/>
+          <ellipse cx="44" cy="78"  rx="14" ry="9"  transform="rotate(-26 44 78)"  fill-opacity=".9"/>
+          <ellipse cx="76" cy="58"  rx="13" ry="8"  transform="rotate(26 76 58)"   fill-opacity=".7"/>
+          <ellipse cx="46" cy="40"  rx="12" ry="7"  transform="rotate(-30 46 40)"  fill-opacity=".8"/>
+          <ellipse cx="70" cy="22"  rx="11" ry="7"  transform="rotate(34 70 22)"   fill-opacity=".85"/>
+          <ellipse cx="58" cy="9"   rx="7"  ry="11" fill-opacity=".9"/>
+        </g>
+      </symbol>
+      <symbol id="leaf" viewBox="0 0 24 32">
+        <path d="M12 0 C21 8 21 23 12 32 C3 23 3 8 12 0 Z" fill="currentColor"/>
+        <path d="M12 4 L12 30" stroke="#14352B" stroke-opacity=".35" stroke-width="1" fill="none"/>
+      </symbol>
+    </defs>
+  </svg>
+
+  <!-- Daun berjatuhan -->
+  <div class="falling-leaves" aria-hidden="true">
+    <svg class="leaf" viewBox="0 0 24 32"><use href="#leaf"/></svg>
+    <svg class="leaf" viewBox="0 0 24 32"><use href="#leaf"/></svg>
+    <svg class="leaf" viewBox="0 0 24 32"><use href="#leaf"/></svg>
+    <svg class="leaf" viewBox="0 0 24 32"><use href="#leaf"/></svg>
+    <svg class="leaf" viewBox="0 0 24 32"><use href="#leaf"/></svg>
+  </div>
+
+  <!-- ===================== 1. COVER / HERO ===================== -->
+  <section class="hero" id="cover">
+    <svg class="botanical tl" viewBox="0 0 120 240" aria-hidden="true"><use href="#eucalyptus"/></svg>
+    <svg class="botanical br" viewBox="0 0 120 240" aria-hidden="true"><use href="#eucalyptus"/></svg>
+
+    <div class="hero-content">
+      <p class="kicker">THE WEDDING OF</p>
+
+      <div class="arch">
+        <img src="images/medium/prewed1.jpg" alt="Foto prewedding Ghofinda &amp; Fida" fetchpriority="high" decoding="async" />
+      </div>
+
+      <h1>Ghofinda &amp; Fida</h1>
+      <p class="date">23 · 10 · 2026</p>
+
+      <p class="quote">“Kami dipertemukan bukan karena kebetulan, tetapi karena doa-doa yang diaminkan langit.”</p>
+
+      <div class="guest-box">
+        <small>Kepada Yth. Bapak/Ibu/Saudara/i</small>
+        <h3 id="guestName">Tamu Undangan</h3>
+        <button type="button" class="btn" id="openBtn">Buka Undangan</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== OPENING ===================== -->
+  <section class="opening bg-cream" id="opening">
+    <svg class="botanical tr" viewBox="0 0 120 240" aria-hidden="true"><use href="#eucalyptus"/></svg>
+    <div class="container reveal">
+      <h2>Assalamu'alaikum</h2>
+      <p>
+        Dengan memohon rahmat dan ridho Allah SWT,
+        kami bermaksud menyelenggarakan acara
+        pernikahan putra-putri kami.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===================== DOA ===================== -->
+  <section class="quote-section bg-medium">
+    <div class="container reveal">
+      <p>
+        “Dan di antara tanda-tanda kekuasaan-Nya ialah Dia menciptakan
+        untukmu pasangan hidup dari jenismu sendiri,
+        supaya kamu merasa tenteram kepadanya,
+        dan dijadikan-Nya di antaramu rasa kasih dan sayang.”
+      </p>
+      <cite>QS. Ar-Rum : 21</cite>
+    </div>
+  </section>
+
+  <!-- ===================== 3. DATA MEMPELAI ===================== -->
+  <section class="bg-dark" id="couple">
+    <svg class="botanical tl" viewBox="0 0 120 240" aria-hidden="true"><use href="#eucalyptus"/></svg>
+    <svg class="botanical br" viewBox="0 0 120 240" aria-hidden="true"><use href="#eucalyptus"/></svg>
+
+    <div class="container">
+      <div class="title reveal">
+        <h2>Pasangan Mempelai</h2>
+      </div>
+
+      <div class="couple-wrapper">
+        <div class="couple-card glass reveal">
+          <div class="dome">
+            <img src="images/gofinda3.jpg" alt="Muhammad Ghofinda Prasetia" loading="lazy" decoding="async" />
+          </div>
+          <h3>Ghofinda</h3>
+          <p class="full-name">Muhammad Ghofinda Prasetia</p>
+          <p>
+            Putra dari<br />
+            Bpk. Teguh Prayitno &amp; Ibu Alfiyah
+          </p>
+          <p class="addr">
+            📍 Ds. Sidorejo, Kec. Warungasem,<br />Kab. Batang
+          </p>
+        </div>
+
+        <div class="couple-card glass reveal">
+          <div class="dome">
+            <img src="images/mufida.jpg" alt="Mufidah Rizqiyah" loading="lazy" decoding="async" />
+          </div>
+          <h3>Fida</h3>
+          <p class="full-name">Mufidah Rizqiyah</p>
+          <p>
+            Putri dari<br />
+            Bpk. Muhammad Arifin &amp; Ibu Khomsiyah
+          </p>
+          <p class="addr">
+            📍 Ds. Galangpengampon, Kec. Wonopringgo,<br />Kab. Pekalongan
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== STORY ===================== -->
+  <section class="bg-cream" id="story">
+    <div class="container">
+      <div class="title reveal">
+        <h2>Our Story</h2>
+        <p>Bertumbuh dalam Ilmu, Bersatu dalam Ikrar</p>
+      </div>
+
+      <div class="story-box glass reveal">
+        <p>
+          Tidak ada yang kebetulan dari sebuah pertemuan.
+          Tahun 2022 menjadi awal cerita kami,
+          dipertemukan dalam satu ruang belajar,
+          lalu tumbuh menjadi dua hati
+          yang saling menemukan arah pulang.
+        </p>
+        <p>
+          Kami berjalan tanpa tergesa.
+          Mengenal satu sama lain melalui waktu,
+          doa-doa yang diam,
+          serta langkah kecil yang terus dijaga bersama.
+        </p>
+        <p>
+          Bukan tentang seberapa cepat cerita ini dimulai,
+          tetapi tentang bagaimana kami bertahan,
+          saling menguatkan,
+          dan percaya bahwa cinta yang baik
+          akan selalu menemukan jalannya.
+        </p>
+        <p>
+          Dari ruang belajar yang sama, tumbuh niat yang searah.
+          Hingga pada akhirnya, kami sampai pada titik ini —
+          mengikat janji dalam ridho Allah SWT,
+          untuk tumbuh bersama, seumur hidup,
+          dalam cinta, iman, dan ketenangan.
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== TIMELINE ===================== -->
+  <section class="bg-medium" id="timeline">
+    <div class="container">
+      <div class="title reveal">
+        <h2>Journey of Love</h2>
+        <p>Perjalanan kami hingga menuju pernikahan</p>
+      </div>
+
+      <div class="timeline">
+        <div class="timeline-item reveal">
+          <div class="timeline-content glass">
+            <span>April 2022</span>
+            <h3>Awal Bertemu</h3>
+            <p>Pertemuan pertama kami dimulai di lingkungan perkuliahan.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-content glass">
+            <span>29 Oktober 2022</span>
+            <h3>Menjalin Hubungan</h3>
+            <p>Kami mulai saling mengenal lebih dekat dan bertumbuh bersama.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-content glass">
+            <span>06 April 2025</span>
+            <h3>Tunangan</h3>
+            <p>Dengan restu keluarga, kami melangsungkan pertunangan.</p>
+          </div>
+        </div>
+
+        <div class="timeline-item reveal">
+          <div class="timeline-content glass">
+            <span>23 Oktober 2026</span>
+            <h3>Menikah</h3>
+            <p>InsyaAllah kami akan memulai kehidupan baru bersama.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 4. RANGKAIAN ACARA & LOKASI ===================== -->
+  <section class="bg-dark" id="event">
+    <svg class="botanical tr" viewBox="0 0 120 240" aria-hidden="true"><use href="#eucalyptus"/></svg>
+    <svg class="botanical bl" viewBox="0 0 120 240" aria-hidden="true"><use href="#eucalyptus"/></svg>
+
+    <div class="container">
+      <div class="title reveal">
+        <h2>Rangkaian Acara</h2>
+        <p>Jum'at, 23 Oktober 2026</p>
+      </div>
+
+      <div class="event-wrapper">
+        <div class="event-card glass reveal">
+          <div class="ev-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><circle cx="9" cy="14" r="5"/><circle cx="15" cy="14" r="5"/><path d="M12 3l1.5 2.5L12 8 10.5 5.5z"/></svg></div>
+          <h3>Akad Nikah</h3>
+          <p>Jum'at, 23 Oktober 2026</p>
+          <p class="time">07.00 WIB</p>
+          <p>Kediaman Mempelai Putri</p>
+        </div>
+
+        <div class="event-card glass reveal">
+          <div class="ev-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 3l2.2 6.3L21 12l-6.8 2.7L12 21l-2.2-6.3L3 12l6.8-2.7z"/></svg></div>
+          <h3>Resepsi</h3>
+          <p>Jum'at, 23 Oktober 2026</p>
+          <p class="time">13.00 – 15.30 WIB</p>
+          <p>Kediaman Mempelai Putri</p>
+        </div>
+
+        <div class="event-card glass reveal">
+          <div class="ev-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M5 8h11v5a5 5 0 0 1-5 5h-1a5 5 0 0 1-5-5z"/><path d="M16 9h2a2 2 0 0 1 0 4h-2M7 21h9"/></svg></div>
+          <h3>Ramah Tamah</h3>
+          <p>Jum'at, 23 Oktober 2026</p>
+          <p class="time">15.30 WIB – selesai</p>
+          <p>Kediaman Mempelai Putri</p>
+        </div>
+      </div>
+
+      <div class="maps-box glass reveal">
+        <h3>📍 Lokasi Acara</h3>
+        <p>
+          Dk. Pekanyaran RT 06/RW 02 No. 06<br />
+          Desa Galangpengampon, Kec. Wonopringgo<br />
+          Kab. Pekalongan, Jawa Tengah
+        </p>
+        <a href="https://maps.app.goo.gl/N3aD2TCSLyny9rNp6" target="_blank" rel="noopener noreferrer" class="btn">
+          Buka Google Maps
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== 5. COUNTDOWN ===================== -->
+  <section class="bg-medium" id="save-date">
+    <div class="container">
+      <div class="save-date glass reveal">
+        <h2>Save The Date</h2>
+        <p>Jum'at, 23 Oktober 2026</p>
+
+        <div class="countdown" id="countdown">
+          <div class="time-box"><h3 id="days">0</h3><small>Hari</small></div>
+          <div class="time-box"><h3 id="hours">00</h3><small>Jam</small></div>
+          <div class="time-box"><h3 id="minutes">00</h3><small>Menit</small></div>
+          <div class="time-box"><h3 id="seconds">00</h3><small>Detik</small></div>
+        </div>
+        <p class="countdown-done" id="countdownDone" hidden>Hari bahagia telah tiba 🤍</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALERI ===================== -->
+  <section class="bg-cream" id="gallery">
+    <div class="container">
+      <div class="title reveal">
+        <h2>Gallery</h2>
+        <p>Potret kebahagiaan kami</p>
+      </div>
+
+      <div class="gallery reveal">
+        <button type="button" data-full="images/prewed5.jpg"><img src="images/thumb/prewed5.jpg" alt="Foto prewedding 1" loading="lazy" decoding="async" /></button>
+        <button type="button" data-full="images/prewed4.jpg"><img src="images/thumb/prewed4.jpg" alt="Foto prewedding 2" loading="lazy" decoding="async" /></button>
+        <button type="button" data-full="images/prewed2.jpg"><img src="images/thumb/prewed2.jpg" alt="Foto prewedding 3" loading="lazy" decoding="async" /></button>
+        <button type="button" data-full="images/weding1.jpg"><img src="images/thumb/weding1.jpg" alt="Foto pernikahan 1" loading="lazy" decoding="async" /></button>
+        <button type="button" data-full="images/weding4.jpg"><img src="images/thumb/weding4.jpg" alt="Foto pernikahan 2" loading="lazy" decoding="async" /></button>
+        <button type="button" data-full="images/medium/prewed1.jpg"><img src="images/thumb/prewed1.jpg" alt="Foto prewedding 4" loading="lazy" decoding="async" /></button>
+        <button type="button" data-full="images/weding5.jpg"><img src="images/thumb/weding5.jpg" alt="Foto pernikahan 3" loading="lazy" decoding="async" /></button>
+        <button type="button" data-full="images/weding2.jpg"><img src="images/thumb/weding2.jpg" alt="Foto pernikahan 4" loading="lazy" decoding="async" /></button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Lightbox -->
+  <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Pratinjau foto">
+    <button type="button" class="lb-btn lb-close" id="lbClose" aria-label="Tutup">&times;</button>
+    <button type="button" class="lb-btn lb-prev" id="lbPrev" aria-label="Foto sebelumnya">&#8249;</button>
+    <img id="lbImg" alt="" />
+    <button type="button" class="lb-btn lb-next" id="lbNext" aria-label="Foto berikutnya">&#8250;</button>
+    <div class="lb-count" id="lbCount"></div>
+  </div>
+
+  <!-- ===================== RSVP / UCAPAN ===================== -->
+  <section class="bg-dark" id="rsvp">
+    <svg class="botanical tl" viewBox="0 0 120 240" aria-hidden="true"><use href="#eucalyptus"/></svg>
+    <div class="container">
+      <div class="title reveal">
+        <h2>Ucapan &amp; Kehadiran</h2>
+        <p>Doa dan ucapan terbaik dari keluarga dan sahabat tercinta</p>
+      </div>
+
+      <div class="rsvp-form glass reveal">
+        <input type="text" id="nama" placeholder="Nama" autocomplete="name" maxlength="60" />
+        <input type="number" id="jumlah" placeholder="Jumlah Tamu" min="1" max="20" inputmode="numeric" />
+        <textarea id="ucapan" rows="5" placeholder="Tulis ucapan dan doa..." maxlength="500"></textarea>
+        <button type="button" class="btn btn-block" onclick="addWish()">Kirim Ucapan</button>
+      </div>
+
+      <div id="wishContainer" class="wish-container"></div>
+    </div>
+  </section>
+
+  <!-- ===================== 6. AMPLOP DIGITAL ===================== -->
+  <section class="bg-cream" id="gift">
+    <div class="container">
+      <div class="title reveal">
+        <h2>Wedding Gift</h2>
+        <p>
+          Doa restu Anda merupakan karunia yang sangat berarti bagi kami.
+          Namun jika memberi adalah bentuk tanda kasih,
+          kami dengan senang hati menerimanya.
+        </p>
+      </div>
+
+      <div class="gift-wrapper">
+        <div class="gift-card glass reveal">
+          <div class="bank-logo">Bank BCA</div>
+          <p class="acc-number" id="rekening1">2490986327</p>
+          <small>a.n. Muhammad Ghofinda Prasetia</small>
+          <button type="button" class="btn-copy" onclick="copyToClipboard('rekening1', 'Nomor rekening BCA')">Salin Nomor Rekening</button>
+        </div>
+
+        <div class="gift-card glass reveal">
+          <div class="bank-logo">DANA</div>
+          <p class="acc-number" id="dana1">085712778093</p>
+          <small>a.n. Mufidah Rizqiyah</small>
+          <button type="button" class="btn-copy" onclick="copyToClipboard('dana1', 'Nomor DANA')">Salin Nomor DANA</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== PENUTUP ===================== -->
+  <section class="bg-medium" id="closing">
+    <svg class="botanical tr" viewBox="0 0 120 240" aria-hidden="true"><use href="#eucalyptus"/></svg>
+    <svg class="botanical bl" viewBox="0 0 120 240" aria-hidden="true"><use href="#eucalyptus"/></svg>
+    <div class="container">
+      <div class="closing reveal">
+        <p>
+          Merupakan suatu kehormatan dan kebahagiaan bagi kami
+          apabila Bapak/Ibu/Saudara/i berkenan hadir
+          serta memberikan doa restu.
+        </p>
+        <p class="quote-text">
+          “Cinta terbaik adalah yang membawa kita
+          semakin dekat kepada Allah,
+          lalu menumbuhkan ketenangan dalam kehidupan.”
+        </p>
+        <p class="salam">Wassalamu'alaikum Warahmatullahi Wabarakatuh</p>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <h3>Ghofinda &amp; Fida</h3>
+    <p>Terima kasih atas doa dan kehadirannya</p>
+    <p class="credit">Created by PT. Global Fitur Inovasi Teknologi</p>
+  </footer>
+
+  <!-- ===================== 2. AUDIO ===================== -->
+  <audio id="music" loop preload="metadata">
+    <source src="For%20the%20Rest%20of%20My%20Life.mp3" type="audio/mpeg" />
+  </audio>
+
+  <button type="button" class="music-btn" id="musicBtn" aria-label="Putar musik">
+    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6z"/></svg>
+  </button>
+
+  <nav class="dock" aria-label="Navigasi undangan">
+    <a href="#couple"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20s-7-4.4-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 10c0 5.6-7 10-7 10z"/></svg><span>Mempelai</span></a>
+    <a href="#event"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="5" width="16" height="15" rx="2"/><path d="M4 10h16M9 3v4M15 3v4"/></svg><span>Acara</span></a>
+    <a href="#gallery"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="4" width="18" height="16" rx="2"/><circle cx="9" cy="10" r="1.6"/><path d="M21 16l-5-5-8 9"/></svg><span>Galeri</span></a>
+    <a href="#rsvp"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16v11H9l-5 4z"/></svg><span>Ucapan</span></a>
+    <a href="#gift"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="9" width="16" height="11" rx="1"/><path d="M12 9v11M4 13h16M12 9c-3 0-4-4-1.5-4S12 9 12 9zm0 0c3 0 4-4 1.5-4S12 9 12 9z"/></svg><span>Hadiah</span></a>
+  </nav>
+
+  <!-- Toast notifikasi -->
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
