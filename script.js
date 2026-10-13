@@ -79,7 +79,7 @@ function legacyCopy(text) {
 }
 
 function copyToClipboard(elementId, label) {
-  const text = document.getElementById(elementId).innerText.trim();
+  const text = document.getElementById(elementId).innerText.trim().replace(/\s+/g, '');
   const done = ok => showToast(ok ? label + ' berhasil disalin!' : 'Gagal menyalin, silakan salin manual');
 
   if (navigator.clipboard && window.isSecureContext) {
