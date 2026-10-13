@@ -155,39 +155,81 @@ lightbox.addEventListener('touchend', e => {
 }, { passive: true });
 
 /* ---------- 6. Ucapan & kehadiran ---------- */
-function addWish() {
-  const nama = document.getElementById('nama').value.trim();
-  const jumlah = document.getElementById('jumlah').value.trim();
-  const ucapan = document.getElementById('ucapan').value.trim();
+// Tempel URL Web App Google Apps Script (berakhiran /exec) di antara tanda kutip.
+// Jika dikosongkan, ucapan hanya tampil di perangkat pengirim (tidak tersimpan).
+const WISH_API = 'https://script.google.com/macros/s/AKfycbzkknT9xZx8JjJovzGU4NuSsElX05r4UnZJqI-H_L1lPzK1lIkQDBZkx9HNG79XKJcvgA/exec';
 
-  if (!nama || !ucapan) {
-    showToast('Isi nama dan ucapan dulu ya ✨');
-    return;
-  }
-
+function buildWishCard(w) {
   // Dibuat dengan textContent (bukan innerHTML) agar aman dari injeksi HTML/XSS
   const card = document.createElement('div');
   card.className = 'wish-card glass';
 
   const h4 = document.createElement('h4');
-  h4.textContent = nama;
+  h4.textContent = w.nama;
   card.appendChild(h4);
 
-  if (jumlah) {
+  if (w.jumlah) {
     const small = document.createElement('small');
-    small.textContent = 'Jumlah tamu: ' + jumlah;
+    small.textContent = 'Jumlah tamu: ' + w.jumlah;
     card.appendChild(small);
   }
 
   const p = document.createElement('p');
-  p.textContent = ucapan;
+  p.textContent = w.ucapan;
   card.appendChild(p);
+  return card;
+}
 
-  document.getElementById('wishContainer').prepend(card);
+async function loadWishes() {
+  if (!WISH_API) return;
+  const box = document.getElementById('wishContainer');
+  try {
+    const res = await fetch(WISH_API);
+    const data = await res.json();
+    box.textContent = '';
+    (data.wishes || []).forEach(w => box.appendChild(buildWishCard(w)));
+  } catch (err) {
+    console.warn('Gagal memuat ucapan:', err);
+  }
+}
 
+let sendingWish = false;
+async function addWish() {
+  const nama = document.getElementById('nama').value.trim().slice(0, 60);
+  const jumlah = document.getElementById('jumlah').value.trim().slice(0, 10);
+  const ucapan = document.getElementById('ucapan').value.trim().slice(0, 500);
+
+  if (!nama || !ucapan) {
+    showToast('Isi nama dan ucapan dulu ya ✨');
+    return;
+  }
+  if (sendingWish) return;
+
+  if (WISH_API) {
+    sendingWish = true;
+    showToast('Mengirim ucapan…');
+    try {
+      // text/plain agar tidak memicu preflight CORS pada Apps Script
+      const res = await fetch(WISH_API, {
+        method: 'POST',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify({ nama, jumlah, ucapan })
+      });
+      const out = await res.json();
+      if (!out.ok) throw new Error(out.error || 'gagal');
+    } catch (err) {
+      sendingWish = false;
+      showToast('Ucapan gagal terkirim, coba lagi ya 🙏');
+      return;
+    }
+    sendingWish = false;
+  }
+
+  document.getElementById('wishContainer').prepend(buildWishCard({ nama, jumlah, ucapan }));
   ['nama', 'jumlah', 'ucapan'].forEach(id => { document.getElementById(id).value = ''; });
   showToast('Terima kasih atas doa & ucapannya 🤍');
 }
+loadWishes();
 
 /* ---------- 7. Animasi muncul saat scroll ---------- */
 const revealEls = document.querySelectorAll('.reveal');
